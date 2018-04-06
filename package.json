@@ -1,0 +1,32 @@
+{
+  "name": "momentum-js-page",
+  "version": "1.0.0",
+  "description": "Preview page for the plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideperozzi/momentum-js-page.git"
+  },
+  "keywords": [
+    "momentum-js",
+    "momentum",
+    "plugin",
+    "preview",
+    "demo"
+  ],
+  "author": "Davide Perozzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davideperozzi/momentum-js-page/issues"
+  },
+  "homepage": "https://momentum.davide-perozzi.de/",
+  "dependencies": {
+    "dj-gulp-tasks": "^1.1.0",
+    "dj-scss": "^1.0.23",
+    "gulp": "^3.9.1",
+    "momentum.js": "^1.1.0"
+  }
+}

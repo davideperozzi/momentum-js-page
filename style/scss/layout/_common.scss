@@ -1,0 +1,34 @@
+html,
+body {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 40px;
+
+    @include box-sizing(border-box);
+
+    &.maxed {
+        margin: 0 auto;
+        max-width: $section-max-width;
+    }
+
+    .section-content-wrapper {
+        padding: 40px;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        background-color: $color-light-gray;
+
+        @include box-sizing(border-box);
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+}

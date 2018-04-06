@@ -1,0 +1,7 @@
+@import "dj-scss/base/reset";
+@import "dj-scss/mixins/css3";
+
+// Include application components
+@import "base";
+@import "layout";
+@import "sections";

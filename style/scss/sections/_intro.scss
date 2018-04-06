@@ -1,0 +1,90 @@
+section.intro {
+    position: relative;
+    background-color: $color-teal;
+
+    @include display-flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+    @include transition(background-color .3s);
+
+    &.moved {
+        h2,
+        h1 .lighter,
+        .github-link {
+            opacity: 0;
+            visibility: hidden;
+
+            @include transition(opacity .3s, visibility 0s .3s);
+        }
+    }
+
+    h2 {
+        color: white;
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 2px;
+        letter-spacing: 1px;
+
+        @include transition(opacity .3s);
+    }
+
+    h1 {
+        font-size: 38px;
+        line-height: 38px;
+        font-weight: 400;
+        display: block;
+        color: white;
+        border-radius: 7px;
+        letter-spacing: 1px;
+
+        @include user-select(none);
+        @include transition(color .3s);
+
+        .intro-draggable {
+            cursor: move;
+            float: left;
+            display: inline-block;
+
+            > span {
+                display: block;
+                pointer-events: none;
+
+                @include transition(transform .2s);
+            }
+
+            &:active > span {
+                @include transform(scale(.99));
+            }
+        }
+
+        .lighter {
+            float: left;
+            display: inline-block;
+            opacity: .5;
+
+            @include transition(opacity .3s);
+        }
+    }
+
+    .github {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .github-link {
+        font-size: 32px;
+        display: block;
+        color: $color-white;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 10px;
+
+        @include transition(opacity .5s);
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
