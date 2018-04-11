@@ -3,6 +3,14 @@
     margin: 0 auto;
     padding: 40px;
     margin-top: 40px;
+
+    @include responsive-width(0, $break-md) {
+        padding: 10px;
+    }
+
+    @include responsive-width($break-md) {
+        padding: 40px;
+    }
 }
 
 h2 {

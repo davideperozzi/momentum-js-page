@@ -71,8 +71,25 @@ section.intro {
 
     .github {
         position: absolute;
-        right: 10px;
-        bottom: 10px;
+
+        @include responsive-width(0, $break-md) {
+            left: 50%;
+            bottom: 50px;
+
+            @include display-flex;
+            @include flex-direction(row);
+            @include justify-content(center);
+            @include transform(translate(-50%, 0));
+
+            iframe:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+
+        @include responsive-width($break-md) {
+            right: 10px;
+            bottom: 10px;
+        }
     }
 
     .github-link {

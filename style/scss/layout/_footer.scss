@@ -17,8 +17,6 @@ footer {
     }
 
     .hate {
-        font-size: 18px;
-
         @include display-flex;
         @include flex-direction(row);
         @include align-items(center);
@@ -26,6 +24,14 @@ footer {
         .icon-heart {
             margin-right: 10px;
             font-size: 28px;
+        }
+
+        @include responsive-width(0, $break-md) {
+            font-size: 14px;
+        }
+
+        @include responsive-width($break-md) {
+            font-size: 18px;
         }
     }
 
