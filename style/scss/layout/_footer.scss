@@ -1,0 +1,44 @@
+footer {
+    height: 100px;
+    position: relative;
+    background-color: $color-teal;
+
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+
+    p {
+        color: $color-white;
+
+        b {
+            color: $color-white;
+        }
+    }
+
+    .hate {
+        font-size: 18px;
+
+        @include display-flex;
+        @include flex-direction(row);
+        @include align-items(center);
+
+        .icon-heart {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+    }
+
+    .github-link {
+        color: white;
+        text-decoration: none;
+        font-size: 28px;
+        margin-left: 10px;
+
+        @include transition(opacity .5s);
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

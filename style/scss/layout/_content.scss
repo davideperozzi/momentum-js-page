@@ -2,4 +2,71 @@ main.page-content {
     min-height: 100vh;
     width: 100%;
     background-color: $color-dirty-white;
+    padding-bottom: 100px;
+}
+
+p,
+ul,
+table {
+    font-size: 16px;
+    line-height: 21px;
+    color: $color-black;
+
+    b {
+        font-weight: 800;
+        color: $color-teal;
+    }
+
+    &.quote {
+        display: block;
+        border-left: 2px solid $color-teal;
+        padding: 5px 10px;
+        font-weight: 800;
+        color: $color-teal;
+        overflow: auto;
+    }
+
+    &.select-all {
+        -webkit-touch-callout: all;
+        -webkit-user-select: all;
+        -khtml-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+    }
+}
+
+main.page-content ul li {
+    padding-left: 18px;
+    position: relative;
+
+    &:before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        left: 0;
+        height: 8px;
+        position: absolute;
+        top: 8px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: $color-teal;
+    }
+}
+
+code {
+    display: block;
+    padding: 10px !important;
+    background-color: darken($color-light-gray, 5) !important;
+    overflow: auto;
+}
+
+table {
+    tr td {
+        padding: 10px 15px;
+    }
+
+    tr:not(:last-child) {
+        border-bottom: 1px solid darken($color-light-gray, 5);
+    }
 }

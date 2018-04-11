@@ -10,9 +10,8 @@ nav.navigation-wrapper {
     @include transition(background-color .3s, height .3s, box-shadow .3s);
 
     &.scrolled {
-        height: $navigation-size-desktop - 40px;
+        height: $navigation-size-desktop - 50px;
         background-color: $color-white;
-
         box-shadow:
             0 3px 8px rgba(0,0,0,0.12),
             0 3px 8px rgba(0,0,0,0.1);
@@ -43,7 +42,7 @@ nav.navigation-wrapper {
         @include display-flex;
         @include align-items(center);
         @include justify-content(center);
-        @include transition(color .3s);
+        @include transition(color .3s, font-size .3s);
 
         span.label {
             display: block;
@@ -60,13 +59,21 @@ nav.navigation-wrapper {
             @include transition(color .3s, border-color .3s);
         }
 
-        &.active span.label {
+        span.label.active {
             color: $color-teal;
             border-color: $color-teal;
         }
     }
 
-    &.scrolled .list-item span.label {
+    &.scrolled .list-item {
+        font-size: 14px;
+    }
+
+    &.scrolled .list-item span.label:not(:hover):not(.active) {
         color: $color-dark-blue;
+    }
+
+    &.scrolled .list-item span.label:hover {
+        color: $color-teal;
     }
 }

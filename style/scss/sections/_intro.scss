@@ -1,6 +1,8 @@
 section.intro {
     position: relative;
     background-color: $color-teal;
+    min-height: 90vh;
+    height: 90vh;
 
     @include display-flex;
     @include flex-direction(column);
@@ -85,6 +87,31 @@ section.intro {
 
         &:hover {
             opacity: .8;
+        }
+    }
+
+    .scroll-down {
+        cursor: pointer;
+        position: absolute;
+        font-size: 24px;
+        bottom: 0;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        border-radius: 50px;
+        color: $color-white;
+        background-color: $color-teal;
+        box-shadow:
+            0 3px 12px rgba(0,0,0,0.12),
+            0 3px 12px rgba(0,0,0,0.1);
+
+        @include transform(translate(-50%, 50%));
+        @include transition(background-color .3s);
+
+        &:hover {
+            background-color: lighten($color-teal, 2);
         }
     }
 }

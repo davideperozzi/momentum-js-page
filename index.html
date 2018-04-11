@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>momentum.js</title>
+        <meta charset="UTF-8" />
+        <title>momentum.js | Kinetic drag & throw</title>
+
+        <!-- Meta -->
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="keywords" content="javascript, plugin, lightweight, kinetic, drag, drop, throw, animation, vanilla" />
+        <meta name="description" content="A lightweight JavaScript plugin, which gives you the ability to drag and throw elements displayed on your website."/>
+        <meta name="robots" content="noindex,follow"/>
+        <link rel="canonical" href="https://momentum.davide-perozzi.de/" />
+        <meta property="og:locale" content="de_DE" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="momentum.js | Kinetic drag & throw" />
+        <meta property="og:description" content="A lightweight JavaScript plugin, which gives you the ability to drag and throw elements displayed on your website." />
+        <meta property="og:url" content="https://momentum.davide-perozzi.de/" />
+        <meta property="og:site_name" content="momentum.js | Kinetic drag & throw" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="A lightweight JavaScript plugin, which gives you the ability to drag and throw elements displayed on your website." />
+        <meta name="twitter:title" content="momentum.js | Kinetic drag & throw" />
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" />
 
         <!-- Styles -->
         <link rel="stylesheet" href="./style/css/application.css" />
+        <link rel="stylesheet" href="./style/css/prism.css" />
+        <link rel="stylesheet" href="./node_modules/plyr/dist/plyr.css"></link>
+
+        <!-- Scripts -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script src="./node_modules/plyr/dist/plyr.min.js"></script>
     </head>
     <body>
         <div class="page-wrapper">
@@ -27,7 +50,7 @@
             </nav>
             <main class="page-content">
                 <section class="intro">
-                    <h2>Move your shit with</h2>
+                    <h2>Kinetic drag & throw with</h2>
                     <h1>
                         <span class="intro-draggable">
                             <span>momentum</span>
@@ -38,6 +61,29 @@
                     <div class="github">
                         <a class="github-button" href="https://github.com/davideperozzi/momentum-js" data-icon="octicon-star" data-size="large" aria-label="Star davideperozzi/momentum-js on GitHub">Star</a>
                         <a class="github-button" data-size="large" href="https://github.com/davideperozzi" aria-label="Follow @davideperozzi on GitHub">Follow @davideperozzi</a>
+                    </div>
+                    <div class="icon-chevron-thin-down scroll-down"></div>
+                </section>
+                <section id="what" class="what maxed-small dynamic">
+                    <div class="section-content-wrapper">
+                        <h3>What's this?</h3>
+                        <p>momenutm.js is a small (plainly written) JavaScript plugin, which gives you the ability to drag and throw elements displayed on your website.
+                        <br />
+                        <br />
+                        To ensure the best performance and loading time the whole plugin is compiled with the mighty <b>closure compiler</b>.
+                        <br />
+                        <br />
+                        </p>
+                        <p>Face the <b>facts</b>:</p><br />
+                        <ul>
+                            <li>The whole file size is about <b>~5KB gzipped</b></li>
+                            <li>It supports <b>mobile</b>, </b>touch</b> and <b>desktop</b> devices</li>
+                            <li>Uses <b title="Request Animation Frame">RAF</b> to guarantee smooth animations</li>
+                            <li>Can be used directly in closure environemnts</li>
+                            <li>Live updatable options</li>
+                            <li>Works for <b>IE10+</b></li>
+                            <li>Flexible API</li>
+                        </ul>
                     </div>
                 </section>
                 <div class="headline-wrapper">
@@ -65,27 +111,174 @@
                     <div id="draggable-demo-4" class="section-content-wrapper">
                         <h3>Layered menu (live example)</h3>
                         <div class="demo-wrapper">
-
+                            <video id="draggabl-demo-4-video" src="./videos/layered-menu-example.mp4"></video>
+                            <script>
+                                setTimeout(function(){
+                                    new Plyr('#draggabl-demo-4-video', {
+                                        controls: ['play-large']
+                                    });
+                                }, 0);
+                            </script>
                         </div>
                     </div>
                 </section>
                 <div class="headline-wrapper">
                     <h2 id="installation">Installation</h2>
                 </div>
-                <section class="installation maxed">
+                <section class="installation maxed dynamic">
                     <div class="section-content-wrapper">
-                        Coming soon...
+                        <p>To use momentum.js you have to include the momentum.js file from the dist folder. If your server supports serving compressed files you can also put the compressed <b>gz file</b> in the same directory as the js file. This improves the </b>loading time by more than 50%</b>.</p>
+                        <br />
+                        <br />
+                        <p>You can install the latest version with <b>npm</b>:</p>
+                        <br />
+                        <p class="quote select-all">npm install momentum.js</p>
+                        <br /><br/>
+                        <p>Or you can include the release via <b>jsdeliver cdn</b>:</p>
+                        <br />
+                        <p class="quote select-all">https://cdn.jsdelivr.net/npm/momentum.js@1.1.0/dist/momentum.min.js</p>
                     </div>
                 </section>
                 <div class="headline-wrapper">
                     <h2 id="documentation">Documentation</h2>
                 </div>
-                <section class="documentation maxed">
+                <section class="documentation maxed dynamic">
                     <div class="section-content-wrapper">
-                        Coming soon...
+                        <h3>Using the draggable</h3>
+                        <p>To create a simple draggable element use this:</p>
+                        <br />
+                        <code class="language-javascript">var draggable = new momentum.Draggable(document.querySelector('#yourid'));</code>
+                        <br />
+                        <p>To change the behavior and add listeners you can use the <b>options listed below</b> like so:</p>
+                        <br />
+<code class="language-javascript">var draggable = new momentum.Draggable(document.querySelector('#yourid'), {
+  friction: 0.2,
+  lockAxis: { y: true },
+  onMove: function(posX, posY, velX, velY){
+    console.log('Moving with a velocity of ', velX, velY);
+  }
+});</code>
+                        <br />
+                        <br />
+                        <br />
+                        <h3>Draggable options</h3>
+                        <table>
+                            <tr>
+                                <td><b>Option<b></td>
+                                <td><b>Type</b></td>
+                                <td><b>Default</b></td>
+                                <td><b>Description</b></td>
+                            </tr>
+                            <tr>
+                                <td>container</td>
+                                <td>Element</td>
+                                <td>null</td>
+                                <td>Container of the draggable element. Also the target for the "drag events"</td>
+                            </tr>
+                            <tr>
+                                <td>elementBounds</td>
+                                <td>Element&#124;string</td>
+                                <td>null</td>
+                                <td>Determines if the bounds of a element should be used. As a shortcut you can pass 'container' or 'parent' as a string</td>
+                            </tr>
+                            <tr>
+                                <td>bounds</td>
+                                <td>Object</td>
+                                <td>null</td>
+                                <td>Set the bounds manually {x: number y: number, width: number, height: number}</td>
+                            </tr>
+                            <tr>
+                                <td>autoAnchor</td>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td>Determines if the anchor should be set on the start position the user has clicked</td>
+                            </tr>
+                            <tr>
+                                <td>anchorX</td>
+                                <td>number</td>
+                                <td>0.5</td>
+                                <td>The anchor point on the horizontal axis.</td>
+                            </tr>
+                            <tr>
+                                <td>anchorY</td>
+                                <td>number</td>
+                                <td>0.5</td>
+                                <td>The anchor point on the vertical axis.</td>
+                            </tr>
+                            <tr>
+                                <td>threshold</td>
+                                <td>number</td>
+                                <td>5</td>
+                                <td>The minimum velocity the element needs to reach to trigger the throw animation</td>
+                            </tr>
+                            <tr>
+                                <td>restitution</td>
+                                <td>number</td>
+                                <td>0</td>
+                                <td>The bounciness of the element if it hits the bounds. This will be multiplicated with the velocity. You can use negative values to let the element bounce out of the bounds. Numbers <b>from -1 to 1</b> are <b>valid</b>.</td>
+                            </tr>
+                            <tr>
+                                <td>friction</td>
+                                <td>number</td>
+                                <td>0.035</td>
+                                <td>The friction of the element. Lower values make the elements decelerate longer. Numbers <b>from 0 to 1</b> are <b>valid</b></td>
+                            </tr>
+                            <tr>
+                                <td>offsetFriction</td>
+                                <td>number</td>
+                                <td>0.1</td>
+                                <td>The friction used out of bounds. This will be included in the calculations if you used a negative restitution. Numbers <b>from 0 to 1</b> are <b>valid</b></td>
+                            </tr>
+                            <tr>
+                                <td>maxVelocity</td>
+                                <td>number</td>
+                                <td>70</td>
+                                <td>The maximum velocity the element can reach. Numbers <b>greater than 0</b> are <b>valid</b>.</td>
+                            </tr>
+                            <tr>
+                                <td>resizeUpdate</td>
+                                <td>boolean</td>
+                                <td>false</td>
+                                <td>Determines whether the draggable should be updated automatically after the browser is resized.</td>
+                            </tr>
+                            <tr>
+                                <td>lockAxis</td>
+                                <td>Object</td>
+                                <td>null</td>
+                                <td>Locked axis will be excluded from the translation. For example: {x: false, y: true}. This will lock the y axis.</td>
+                            </tr>
+                            <tr>
+                                <td>onUp</td>
+                                <td>Function</td>
+                                <td>null</td>
+                                <td>Callback which will be called if the user released the element.</td>
+                            </tr>
+                            <tr>
+                                <td>onDown</td>
+                                <td>Function</td>
+                                <td>null</td>
+                                <td>Callback which will be called if the user hits the element before the drag. Whether you return true or false determimes if the drag will be accepted. If you want to <b>preserve the default behaviour</b> you should <b>return the "hit" parameter</b>. Parameter list: hit, cursorX, cursorY, elementX, elementY, elementWidth, elementHeight</td>
+                            </tr>
+                            <tr>
+                                <td>onMove</td>
+                                <td>Function</td>
+                                <td>null</td>
+                                <td>This will be triggered before the element is going to be moved. At this point the element does <b>not</b> have the latest translation. You can return an coordinate object like "{x: number, y: number}" to manipulate the position of the element. Parameter list: posX, posY, velX, velY.</td>
+                            </tr>
+                            <tr>
+                                <td>onTranslate</td>
+                                <td>Function</td>
+                                <td>null</td>
+                                <td>This will be called if the translation settled. Parameter list: elementX, elementY, elementWidth, elementHeight, elementBounds</td>
+                            </tr>
+                        </table>
                     </div>
                 </section>
             </main>
+            <footer>
+                <p class="hate"><i class="icon-heart"></i>Made with hate, in a dark room</p>
+                <a href="//github.com/davideperozzi" target="_blank" class="icon-github github-link"></a>
+            </footer>
         </div>
 
         <!-- jQuery -->
@@ -93,6 +286,9 @@
 
         <!-- Include momentum.js -->
         <script src="./node_modules/momentum.js/dist/momentum.min.js"></script>
+
+        <!-- Include prism -->
+        <script async src="./javascript/third-party/prism/prism.js"></script>
 
         <!-- Include application -->
         <script src="./javascript/application.js"></script>

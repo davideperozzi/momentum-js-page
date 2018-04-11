@@ -7,7 +7,7 @@ jQuery(document).ready(function($){
         var scrollY = $(document).scrollTop();
         var element = $('nav');
 
-        if (scrollY > 50) {
+        if (scrollY > 80) {
             element.addClass('scrolled');
         } else {
             element.removeClass('scrolled');
@@ -52,5 +52,15 @@ jQuery(document).ready(function($){
                 headlineParentElement.addClass('moved');
             }
         }
+    });
+
+    /**
+     * Scroll down
+     */
+
+    $('.scroll-down').on('click', function(){
+        $("html, body").animate({
+            scrollTop: $('#what').offset().top - $('nav').height() - 10
+        }, 800);
     });
 });
