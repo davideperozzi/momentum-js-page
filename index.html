@@ -136,7 +136,7 @@
                         <br /><br/>
                         <p>Or you can include the release via <b>jsdeliver cdn</b>:</p>
                         <br />
-                        <p class="quote select-all">https://cdn.jsdelivr.net/npm/momentum.js@1.1.0/dist/momentum.min.js</p>
+                        <p class="quote select-all">https://cdn.jsdelivr.net/npm/momentum.js@1.2.0/dist/momentum.min.js</p>
                     </div>
                 </section>
                 <div class="headline-wrapper">
@@ -270,6 +270,12 @@
                                 <td>Function</td>
                                 <td>null</td>
                                 <td>This will be called if the translation settled. Parameter list: elementX, elementY, elementWidth, elementHeight, elementBounds</td>
+                            </tr>
+                            <tr>
+                                <td>preventMove</td>
+                                <td>Function</td>
+                                <td>null</td>
+                                <td>A function which needs to return wheter true or false to prevent the movement. This can be useful to add a move threshold. Paramter list: movedX, movedY, isTouchDevice</td>
                             </tr>
                         </table>
                     </div>
