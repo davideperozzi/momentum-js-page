@@ -27,6 +27,7 @@ steps:
       user: root
       key: { from_secret: davideperozzi_ssh_private_key }
     environment:
+      APP_NAME: momentum-js-page
       APP_DOMAIN: momentum.davideperozzi.com
       APP_IMAGE: docker.dorfjungs.io/davideperozzi/momentum-js-page
       IMAGE_TAG: latest
