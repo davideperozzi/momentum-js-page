@@ -21,7 +21,7 @@ steps:
   - name: deploy
     image: dorfjungs/drone-docker-stack
     settings:
-      name: portfolio
+      name: momentum-js-page
       stack: [ .stack.yml ]
       host: davideperozzi.com
       user: root
